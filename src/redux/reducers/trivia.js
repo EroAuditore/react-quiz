@@ -1,19 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as stages from '../utils/constants';
 
-const initialState = { stage: stages.START_TRIVIA, score: 0 };
+const initialState = {
+  stage: stages.START_TRIVIA,
+  score: 0,
+  questionIndex: 0,
+  questions: {},
+  error: false
+};
 
 const triviaReducer = createSlice({
   name: 'trivia',
   initialState,
-  // eslint-disable-next-line prettier/prettier
+
   reducers: {
     startTrvia(state) {
-      state.stage = stages.START_TRIVIA;
+      state.stage = stages.FETCHING_TRIVIA;
+    },
+    succesLoad(state, payload) {
+      state.stage = stages.TRIVIA;
+      state.questions = payload.data;
+      state.error = false;
+      state.questionIndex = 0;
+      state.score = 0;
+    },
+    failLoad(state) {
+      state.error = true;
     }
   }
 });
 
-// eslint-disable-next-line no-empty-pattern
-export const { startTrvia } = triviaReducer.actions;
+export const { startTrvia, succesLoad, failLoad } = triviaReducer.actions;
 export default triviaReducer.reducer;
