@@ -1,15 +1,17 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { startTrvia } from '../../redux/reducers/trivia';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { startTrvia } from "../../redux/reducers/trivia";
 
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleBegin = () => {
-    dispatch(startTrvia());
-    navigate('/trivia');
+    navigate("/trivia");
   };
+  useEffect(() => {
+    dispatch(startTrvia());
+  }, [dispatch]);
 
   return (
     <>

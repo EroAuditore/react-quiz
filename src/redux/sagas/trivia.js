@@ -6,8 +6,8 @@ import { startTrvia, succesLoad, failLoad } from '../reducers/trivia';
 
 export function* loadTrivia() {
   try {
-    const result = yield call(apiCall, '', null, null, 'GET');
-    yield put(succesLoad(result));
+    const { data } = yield call(apiCall, '', null, null, 'GET');
+    yield put(succesLoad(data.results));
   } catch (error) {
     yield put(failLoad(error));
   }

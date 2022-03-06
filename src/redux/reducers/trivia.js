@@ -17,9 +17,9 @@ const triviaReducer = createSlice({
     startTrvia(state) {
       state.stage = stages.FETCHING_TRIVIA;
     },
-    succesLoad(state, payload) {
+    succesLoad(state, action) {
       state.stage = stages.TRIVIA;
-      state.questions = payload.data;
+      state.questions = action.payload;
       state.error = false;
       state.questionIndex = 0;
       state.score = 0;

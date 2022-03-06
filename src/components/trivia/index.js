@@ -1,13 +1,20 @@
+import React from "react";
+import { useSelector } from "react-redux";
+
 const Trivia = () => {
-  const name = 'Cateory Quiz';
+  const currentQuestion = useSelector(
+    (state) => state.trivia.questions[state.trivia.questionIndex].question
+  );
+  const name = "Cateory Quiz";
   const handleNext = () => {
-    console.log('next question');
+    console.log("currentQuestion", currentQuestion);
   };
 
   return (
     <>
       <h1>{name}</h1>
-      <div>Card of the trivia</div>
+      <div dangerouslySetInnerHTML={{ __html: currentQuestion }}></div>
+
       <div>Counter</div>
       <button type="button" onClick={handleNext}>
         Next
