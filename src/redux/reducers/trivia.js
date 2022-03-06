@@ -1,16 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
-import * as stages from '../utils/constants';
+import { createSlice } from "@reduxjs/toolkit";
+import * as stages from "../utils/constants";
 
 const initialState = {
   stage: stages.START_TRIVIA,
   score: 0,
   questionIndex: 0,
   questions: {},
-  error: false
+  answers: [],
+  error: false,
 };
 
 const triviaReducer = createSlice({
-  name: 'trivia',
+  name: "trivia",
   initialState,
 
   reducers: {
@@ -26,9 +27,22 @@ const triviaReducer = createSlice({
     },
     failLoad(state) {
       state.error = true;
-    }
-  }
+    },
+    answerQuestion(state, action) {
+      const currentQuestion = state.questions[state.questionIndex];
+      state.score +=
+        action.payload.answer === currentQuestion.correct_answer ? 1 : 0;
+      state.questionIndex += 1;
+      state.answers.push({
+        question: currentQuestion.question,
+        correctAnswer: currentQuestion.correct_answer,
+        answer: action.payload.answer,
+        isCorrect: action.payload.answer === currentQuestion.correct_answer,
+      });
+    },
+  },
 });
 
-export const { startTrvia, succesLoad, failLoad } = triviaReducer.actions;
+export const { startTrvia, succesLoad, failLoad, answerQuestion } =
+  triviaReducer.actions;
 export default triviaReducer.reducer;
