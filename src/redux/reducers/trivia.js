@@ -40,9 +40,12 @@ const triviaReducer = createSlice({
         isCorrect: action.payload.answer === currentQuestion.correct_answer,
       });
     },
+    endTrivia(state) {
+      state.stage = stages.END_TRIVIA;
+    },
   },
 });
 
-export const { startTrvia, succesLoad, failLoad, answerQuestion } =
+export const { startTrvia, succesLoad, failLoad, answerQuestion, endTrivia } =
   triviaReducer.actions;
 export default triviaReducer.reducer;

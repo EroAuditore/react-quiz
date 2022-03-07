@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { answerQuestion } from "../../redux/reducers/trivia";
+import { answerQuestion, endTrivia } from "../../redux/reducers/trivia";
 import { useNavigate } from "react-router-dom";
 
 const Trivia = () => {
@@ -15,6 +15,7 @@ const Trivia = () => {
   );
   const answerHandler = (answer) => {
     if (currentIndex === 9) {
+      dispatch(endTrivia());
       navigate("/result");
     } else {
       dispatch(answerQuestion({ answer }));
