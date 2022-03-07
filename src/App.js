@@ -6,13 +6,17 @@ import Result from "./components/result";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/result" element={<Result />} />
-        <Route path="/trivia" element={<Trivia />} />
-        <Route path="/" exact element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="bg-slate-300">
+      <div className="container min-h-screen flex justify-center items-center p-4">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/result" element={<Result />} />
+            <Route path="/trivia" element={<Trivia />} />
+            <Route path="/" exact element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </div>
   );
 };
 
