@@ -25,7 +25,14 @@ const App = () => {
       <div className="container min-h-screen flex justify-center items-center p-4">
         <BrowserRouter>
           <Routes>
-            <Route path="/result" element={<Result />} />
+            <Route
+              path="/result"
+              element={
+                <ResultStage redirectTo="/">
+                  <Result />
+                </ResultStage>
+              }
+            />
             <Route
               path="/trivia"
               element={

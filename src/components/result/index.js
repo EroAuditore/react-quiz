@@ -47,11 +47,11 @@ const Result = () => {
                 dangerouslySetInnerHTML={{ __html: answer.question }}
               ></p>
               <div className="flex justify-around">
-                <p class="text-gray-500 font-thin">
-                  You answer:{answer.answer}
+                <p class="text-gray-700 font-thin">
+                  You answer: {answer.answer}
                 </p>
-                <p class="text-gray-500 font-thin">
-                  Correct anser:{answer.correctAnswer}
+                <p class="text-gray-700 font-thin">
+                  Correct answer: {answer.correctAnswer}
                 </p>
               </div>
             </div>
