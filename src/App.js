@@ -1,22 +1,12 @@
 import { useSelector } from 'react-redux';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/home';
 import Trivia from './components/trivia';
 import Result from './components/result';
-import * as stages from './redux/utils/constants';
+import ProtectedRoute from './components/common/ProtectedRoute';
 
 const App = () => {
   const stage = useSelector(state => state.trivia.stage);
-
-  const TriviaStage = ({ children, redirectTo }) => {
-    const isStage = stages.TRIVIA === stage;
-    return isStage ? children : <Navigate to={redirectTo} />;
-  };
-
-  const ResultStage = ({ children, redirectTo }) => {
-    const isStage = stages.END_TRIVIA === stage;
-    return isStage ? children : <Navigate to={redirectTo} />;
-  };
 
   return (
     <div className="bg-slate-300">
@@ -26,17 +16,17 @@ const App = () => {
             <Route
               path="/result"
               element={
-                <ResultStage redirectTo="/">
+                <ProtectedRoute path="result" stage={stage}>
                   <Result />
-                </ResultStage>
+                </ProtectedRoute>
               }
             />
             <Route
               path="/trivia"
               element={
-                <TriviaStage redirectTo="/">
+                <ProtectedRoute path={'trivia'} stage={stage}>
                   <Trivia />
-                </TriviaStage>
+                </ProtectedRoute>
               }
             />
             <Route path="/" exact element={<Home />} />
