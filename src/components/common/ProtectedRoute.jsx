@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import * as stages from './redux/utils/constants';
+import * as stages from '../../redux/utils/constants';
 import PropTypes from 'prop-types';
 
 const ProtectedRoute = ({ children, path, stage }) => {

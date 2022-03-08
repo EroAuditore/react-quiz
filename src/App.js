@@ -4,6 +4,7 @@ import Home from './components/home';
 import Trivia from './components/trivia';
 import Result from './components/result';
 import ProtectedRoute from './components/common/ProtectedRoute';
+import Error from './components/common/Error';
 
 const App = () => {
   const stage = useSelector(state => state.trivia.stage);
@@ -29,6 +30,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+            <Route path="/error" exact element={<Error />} />
             <Route path="/" exact element={<Home />} />
           </Routes>
         </BrowserRouter>

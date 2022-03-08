@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { startTrvia } from '../../redux/reducers/trivia';
 
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const errorState = useSelector(state => state.trivia.error);
   const handleBegin = () => {
     navigate('/trivia');
   };
   useEffect(() => {
     dispatch(startTrvia());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (errorState === true) navigate('/error');
+  }, [errorState]);
 
   return (
     <div className="max-w-xl rounded shadow-lg bg-slate-50 h-96 flex flex-col p-4 justify-evenly w-[32rem]">
