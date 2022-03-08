@@ -87,6 +87,14 @@ Trivia game, you have to answer 10 questions true or false and at the end of the
    npm start
    ```
 
+### Test
+
+To Run the test
+
+```sh
+   npm run test
+```
+
 ## Optional
 
 - If you want to see the redux state and the actions, just install [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension#installation) for your browser and all the configuration is already in this project

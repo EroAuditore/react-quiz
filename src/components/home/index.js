@@ -29,7 +29,7 @@ const Home = () => {
         type="button"
         onClick={handleBegin}
       >
-        Beggin
+        Start
       </button>
     </div>
   );
