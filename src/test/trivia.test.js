@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 
@@ -48,7 +48,7 @@ describe('it renders home component', () => {
   // Assert
 
   test('Render first question', () => {
-    let element = screen.getByText(initialState.trivia.questions[0].question);
+    const element = screen.getByText(initialState.trivia.questions[0].question);
     expect(element).toHaveTextContent(
       initialState.trivia.questions[0].question
     );

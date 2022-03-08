@@ -35,7 +35,7 @@ describe('it renders home component', () => {
 
   // Assert
   test('Button start render render', () => {
-    let comp = component.getByText('Start');
+    const comp = component.getByText('Start');
     expect(comp).toHaveTextContent('Start');
   });
 });
