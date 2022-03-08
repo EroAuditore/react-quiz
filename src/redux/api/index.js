@@ -5,7 +5,7 @@ const apiCall = async (url, data, headers, method) => {
     method,
     url: process.env.REACT_APP_APIURL + url,
     data,
-    headers
+    headers,
   });
 };
 

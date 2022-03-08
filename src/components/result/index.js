@@ -1,17 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Result = () => {
-  const answers = useSelector((state) => state.trivia.answers);
-  const score = useSelector((state) => state.trivia.score);
+  const answers = useSelector(state => state.trivia.answers);
+  const score = useSelector(state => state.trivia.score);
   const navigate = useNavigate();
 
   const handleRestart = () => {
-    navigate("/");
+    navigate('/');
   };
 
-  const imgAnswer = (isCorrect) => {
+  const imgAnswer = isCorrect => {
     return isCorrect ? (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +36,9 @@ const Result = () => {
       <h1 className="text-3xl text-center">Your Score: {score} of 10</h1>
 
       {answers.map((answer, index) => (
-        <div key={index} class="flex justify-between px-2 py-2 flex-col">
-          <div class="flex ">
-            <div class="flex-none w-14 h-15 p-4">
+        <div key={index} className="flex justify-between px-2 py-2 flex-col">
+          <div className="flex ">
+            <div className="flex-none w-14 h-15 p-4">
               {imgAnswer(answer.isCorrect)}
             </div>
             <div className="grow h-15">
@@ -47,10 +47,10 @@ const Result = () => {
                 dangerouslySetInnerHTML={{ __html: answer.question }}
               ></p>
               <div className="flex justify-around">
-                <p class="text-gray-700 font-thin">
+                <p className="text-gray-700 font-thin">
                   You answer: {answer.answer}
                 </p>
-                <p class="text-gray-700 font-thin">
+                <p className="text-gray-700 font-thin">
                   Correct answer: {answer.correctAnswer}
                 </p>
               </div>

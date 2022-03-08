@@ -1,22 +1,22 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { answerQuestion, endTrivia } from "../../redux/reducers/trivia";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { answerQuestion, endTrivia } from '../../redux/reducers/trivia';
+import { useNavigate } from 'react-router-dom';
 
 const Trivia = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const currentIndex = useSelector((state) => state.trivia.questionIndex);
+  const currentIndex = useSelector(state => state.trivia.questionIndex);
   const currentQuestion = useSelector(
-    (state) => state.trivia.questions[state.trivia.questionIndex].question
+    state => state.trivia.questions[state.trivia.questionIndex].question
   );
   const category = useSelector(
-    (state) => state.trivia.questions[state.trivia.questionIndex].category
+    state => state.trivia.questions[state.trivia.questionIndex].category
   );
-  const answerHandler = (answer) => {
+  const answerHandler = answer => {
     if (currentIndex === 9) {
       dispatch(endTrivia());
-      navigate("/result");
+      navigate('/result');
     } else {
       dispatch(answerQuestion({ answer }));
     }
@@ -31,14 +31,14 @@ const Trivia = () => {
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
-          onClick={() => answerHandler("True")}
+          onClick={() => answerHandler('True')}
         >
           True
         </button>
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
-          onClick={() => answerHandler("False")}
+          onClick={() => answerHandler('False')}
         >
           false
         </button>

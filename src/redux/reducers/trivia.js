@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import * as stages from "../utils/constants";
+import { createSlice } from '@reduxjs/toolkit';
+import * as stages from '../utils/constants';
 
 const initialState = {
   stage: stages.START_TRIVIA,
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const triviaReducer = createSlice({
-  name: "trivia",
+  name: 'trivia',
   initialState,
 
   reducers: {
