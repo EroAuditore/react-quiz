@@ -1,16 +1,14 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Rockets and dragons</h3>
+  <h3 align="center">Trivia game</h3>
 
   <p align="center">
-    Rokcets Missions and dragons reservations with React-Redux
+    Trivia game with React-Redux
     <br />
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://micro-rocketsndragons.netlify.app/">Live Demo</a>
-    ·
     <a href="https://github.com/RokoVarano/RocketsNDragons/issues">Report Bug</a>
     ·
     <a href="https://github.com/RokoVarano/RocketsNDragons/issues">Request Feature</a>
@@ -29,7 +27,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -37,7 +34,6 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
@@ -68,9 +64,6 @@ Trivia game, you have to answer 10 questions true or false and at the end of the
 - LinkedIn: [EroAuditore](https://www.linkedin.com/in/EroAuditore/)
 
 ## Getting Started
-
-- You will not need additional instructions on installing.
-- In case you have node_modules on your folder Add them to .gitignore file before you a push.
 
 ### Installation
 
@@ -124,5 +117,4 @@ License Free.
 
 ## Acknowledgements
 
-- [GitHub Pages](https://pages.github.com)
 - [WebPack](https://webpack.js.org/)
