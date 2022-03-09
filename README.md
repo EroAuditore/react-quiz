@@ -9,6 +9,8 @@
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="https://eroreactquiz.netlify.app/">Live Demo</a>
+    ·
     <a href="https://github.com/EroAuditore/react-quiz/issues">Report Bug</a>
     ·
     <a href="https://github.com/EroAuditore/react-quiz/issues">Request Feature</a>
