@@ -1,6 +1,6 @@
 {
-   "singleQuote": true,
-   "trailingComma": "none",
-   "endOfLine": "auto",
-   "tabWidth": 2
+  "arrowParens": "avoid",
+  "jsxSingleQuote": false,
+  "singleQuote": true,
+  "trailingComma": "es5"
 }
