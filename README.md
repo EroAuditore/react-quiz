@@ -9,9 +9,9 @@
     <a href="#"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/RokoVarano/RocketsNDragons/issues">Report Bug</a>
+    <a href="https://github.com/EroAuditore/react-quiz/issues">Report Bug</a>
     ·
-    <a href="https://github.com/RokoVarano/RocketsNDragons/issues">Request Feature</a>
+    <a href="https://github.com/EroAuditore/react-quiz/issues">Request Feature</a>
   </p>
 </p>
 
